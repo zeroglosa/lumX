@@ -1,3 +1,5 @@
 <div class="dropdown-menu dropdown-menu--{{ position }}" ng-class="{ 'dropdown__menu--is-dropped': isDropped }">
-    <div class="dropdown-menu__content" ng-transclude="2" ng-if="isDropped"></div>
+    <div class="dropdown-scrollable" lx-scrollbar>
+        <div class="dropdown-menu__content" ng-transclude="2" ng-if="isDropped"></div>
+    </div>
 </div>

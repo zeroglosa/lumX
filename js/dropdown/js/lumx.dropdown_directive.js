@@ -126,6 +126,14 @@ angular.module('lumx.dropdown', [])
                 top: top
             });
 
+            if (angular.isDefined($scope.maxHeight) && $scope.maxHeight !== 'false')
+            {
+                dropdownMenu.find('.dropdown-scrollable').css(
+                {
+                    maxHeight: $scope.maxHeight
+                });
+            }
+
             if (angular.isDefined($scope.width))
             {
                 if ($scope.width === 'full')
@@ -246,7 +254,8 @@ angular.module('lumx.dropdown', [])
             scope: {
                 position: '@',
                 width: '@',
-                fromTop: '@'
+                fromTop: '@',
+                maxHeight: '@'
             },
             link: function(scope, element, attrs, ctrl)
             {
