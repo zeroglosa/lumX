@@ -331,6 +331,7 @@ angular.module('lumx.select', [])
             link: function(scope, element, attrs, ngModel)
             {
                 scope.multiple = angular.isDefined(attrs.multiple);
+                scope.noFilter = angular.isDefined(attrs.noFilter);
                 scope.floatingLabel = angular.isDefined(attrs.floatingLabel);
                 scope.tree = angular.isDefined(attrs.tree);
                 scope.ngModel = ngModel;

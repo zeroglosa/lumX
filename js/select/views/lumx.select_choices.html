@@ -6,7 +6,7 @@
                  ng-bind-html="getSelectedTemplate()"></div>
         </li>
 
-        <li>
+        <li ng-if="!noFilter">
             <div class="lx-select__filter dropdown-filter">
                 <lx-search-filter model="data.filter" filter-width="100%" lx-dropdown-filter></lx-search-filter>
             </div>
