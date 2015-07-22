@@ -14,6 +14,11 @@ angular.module('lumx.date-picker', [])
             $datePickerContainer,
             $computedWindow;
 
+	    var dateFormat = 'LL';
+	    if (typeof $scope.dateFormat !== 'undefined') {
+		    dateFormat = $scope.dateFormat;
+	    }
+
         $scope.ctrlData = {
             isOpen: false
         };
@@ -41,7 +46,7 @@ angular.module('lumx.date-picker', [])
             if (angular.isDefined($scope.model))
             {
                 $scope.selected = {
-                    model: moment($scope.model).format('LL'),
+                    model: moment($scope.model).format(dateFormat),
                     date: $scope.model
                 };
 
@@ -87,7 +92,7 @@ angular.module('lumx.date-picker', [])
         $scope.select = function(day)
         {
             $scope.selected = {
-                model: day.format('LL'),
+                model: day.format(dateFormat),
                 date: day.toDate()
             };
 
@@ -100,7 +105,7 @@ angular.module('lumx.date-picker', [])
         {
             $scope.yearSelection = false;
 
-            $scope.selected.model = moment($scope.selected.date).year(year).format('LL');
+            $scope.selected.model = moment($scope.selected.date).year(year).format(dateFormat);
             $scope.selected.date = moment($scope.selected.date).year(year).toDate();
             $scope.model = moment($scope.selected.date).toDate();
             $scope.activeDate = $scope.activeDate.add(year - $scope.activeDate.year(), 'year');
