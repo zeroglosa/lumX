@@ -235,7 +235,8 @@ angular.module('lumx.date-picker', [])
                 label: '@',
                 fixedLabel: '&',
                 allowClear: '@',
-                icon: '@'
+                icon: '@',
+                dateFormat: '@'
             },
             templateUrl: 'date-picker.html',
             link: function(scope, element, attrs, ctrl)
